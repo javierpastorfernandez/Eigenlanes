@@ -3,7 +3,7 @@ from visualizes.visualize import *
 
 def prepare_dataloader(cfg, dict_DB):
     if 'train' in cfg.datalist:
-        dataset = Dataset_Train(cfg=cfg)
+        dataset = Dataset_Train(cfg=cfg) # generates seg_label
     dataloader = torch.utils.data.DataLoader(dataset=dataset,
                                              batch_size=cfg.batch_size,
                                              shuffle=False,

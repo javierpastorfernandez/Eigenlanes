@@ -8,6 +8,7 @@ def run(cfg, dict_DB):
     preprocessor = Preprocessing(cfg, dict_DB)
     preprocessor.run()
 
+#  python main.py --dataset_dir /home/autolabelling/datasets/tusimple/TUSimple/
 def main():
     # option
     cfg = Config()

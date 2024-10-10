@@ -245,14 +245,14 @@ class Preprocessing(object):
         return out
 
     def run_flip(self):
+        # self.label.unique()
 
         for i in range(0, 2):  # 1: horizontal flip
             self.flip_idx = i
 
             if i == 1:
                 self.img = self.img.flip(2)
-                self.label = self.label.flip(1)
-
+                self.label = self.label.flip(1) # Is this zeros and ones 
             self.visualize.update_datalist(self.img, self.img_name, self.label, self.dir_name, self.file_name, self.img_idx)
 
             if i == 0:
@@ -291,6 +291,7 @@ class Preprocessing(object):
         self.init()
 
         for i, batch in enumerate(self.dataloader):
+            # Imagenes, mascaras (labels) y puntos 
             self.update_batch_data(batch, i)
             self.run_flip()
 
